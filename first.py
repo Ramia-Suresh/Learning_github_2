@@ -1,19 +1,10 @@
 import csv
 
-# Data to be written
-data = [
-    ["Name", "Age", "City"],
-    ["Alice", 25, "New York"],
-    ["Bob", 30, "Los Angeles"],
-    ["Charlie", 22, "Chicago"]
-]
-
-# File name
-filename = "people.csv"
-
-# Writing to CSV file
-with open(filename, mode="w", newline="") as file:
+# Create a CSV file
+with open("output.csv", mode="w", newline="") as file:
     writer = csv.writer(file)
-    writer.writerows(data)
+    writer.writerow(["Name", "Age", "City"])
+    writer.writerow(["Alice", 25, "New York"])
+    writer.writerow(["Bob", 30, "Los Angeles"])
 
-print(f"CSV file '{filename}' has been created successfully!")
+print("CSV file 'output.csv' created successfully!")
