@@ -1,0 +1,26 @@
+name: File Operations and Run Script
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  file_operations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create a text file and write content
+        run: echo "Learning 101" > file.txt
+
+      - name: Create a copy of the file
+        run: cp file.txt file_copy.txt
+
+      - name: Delete the copy
+        run: rm file_copy.txt
+
+      - name: Run Python script
+        run: python first.py
